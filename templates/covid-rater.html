@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>SafetyMeter</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-  </head>
-  <body>
-    <script src="script.js"></script>
-    <!-- Form to input a rating -->
-    <div class "container">
 
-        <form action="ratings">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>SafetyMeter</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+	 crossorigin="anonymous" />
+</head>
 
-          <div class="masks">
+<body>
+	<script src="script.js">
+	</script>
+	<!-- Form to input a rating -->
+	<div class "container">
 
-            <h1>On a scale from one to five stars, how consistently do employees and patrons properly wear masks?</h1>
-            <input class="star one-star" id="masks-one-star" type="radio" name="masks-one-star"/>
+		<form action="ratings">
+
+			<div class="masks">
+
+				<h1>On a scale from one to five stars, how consistently do employees and patrons properly wear masks?</h1>
+				<input class="star one-star" id="masks-one-star" type="radio" name="masks-one-star"/>
             <label class="star one-star" for="masks-one-star"></label>
 
             <input class="star two-star" id="masks-two-star" type="radio" name=id="masks-two-star"/>
@@ -115,6 +119,27 @@
             <label class="star five-star" for="capacity-five-star"></label>
 
           </div>
+
+          <div class="temp">
+
+           <h1>On a scale of one to five stars, how consistently do employees perform temperature checks before admitting patrons?</h1>
+            <input class="star one-star" id="temp-one-star" type="radio" name="temp-one-star"/>
+            <label class="star one-star" for="temp-one-star"></label>
+
+            <input class="star two-star" id="temp-two-star" type="radio" name="temp-two-star"/>
+            <label class="star two-star" for="temp-two-star"></label>
+
+            <input class="star three-star" id="temp-three-star" type="radio" name="temp-three-star"/>
+            <label class="star three-star" for="temp-three-star"></label>
+
+            <input class="star four-star" id="temp-four-star" type="radio" name="temp-four-star"/>
+            <label class="star four-star" for="temp-four-star"></label>
+
+            <input class="star five-star" id="temp-five-star" type="radio" name="temp-five-star"/>
+            <label class="star five-star" for="temp-five-star"></label>
+
+          </div>
+
 
           <input type="submit" value="Submit">
 
