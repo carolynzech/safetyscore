@@ -1,3 +1,5 @@
+#!/usr/bin/python3.9
+
 from flask import Flask, request, render_template, redirect, session
 from database_functions import addUser, addPlace, getPlace
 app = Flask(__name__)
