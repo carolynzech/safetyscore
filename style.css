@@ -1,0 +1,15 @@
+.star[type="radio"] {
+	display:none;
+}
+
+.star + label {
+	display: inline-block;
+	width: 100px;
+	height: 95px;
+	cursor: pointer;
+	background-image: url("star.png")
+}
+
+.star[type="radio"]:checked + label {
+	background-image: url("filled-in-star.png")
+}
