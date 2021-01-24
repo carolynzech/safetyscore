@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<head>
-    <title>
-        Name the new place
-    </title>
-</head>
-<body>
-    <form action="/newPlaceName"  method="POST">
-        <input type="text" name="placeName">
-        <button type="submit">Submit</button>
-    </form>
+<html lang='en'>
+  <meta charset="UTF-8"
+  <head>
+      <title>
+          Create a New Location!
+      </title>
+      <link rel="stylesheet" href="../static/newPlace-css.css" type="text/css" />
+  </head>
+  <body>
+      <h1>Enter the name of the location here:</h1><br>
+      <h2>Please do not use spaces or special characters
+        in your name; "Pepe's Pizza" should be "PepesPizza"</h2><br>
+      <form action="/newPlaceName"  method="POST">
+          <input class="name" type="text" name="placeName">
+          <button class="submit" type="submit">Submit</button>
+      </form>
 
-</body>
+  </body>
+</html>
