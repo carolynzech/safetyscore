@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content=" valueth=device- valueth">
+    <title>SafetyMeter</title>
+    <link href="../static/rating-entry-css.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <!-- Form to input a rating -->
+    <div class="container">
+
+        <img src='../static/logo-slogan.png' />
+
+        <h1>How well does the location satisfy the following criteria?</h1>
+
+        <form action="/addPlaceForm" method="POST">
+
+            <div class="lighting">
+                <h2>Lighting</h2>
+                <input class="star" type="radio" name="lighting-star" id="lighting-one-star" value=1>
+                <label class="star" for="lighting-one-star"></label>
+
+                <input class="star" type="radio" name="lighting-star" id="lighting-two-star" value=2>
+                <label class="star" for="lighting-two-star"></label>
+
+                <input class="star" type="radio" name="lighting-star" id="lighting-three-star" value=3>
+                <label class="star" for="lighting-three-star"></label>
+
+                <input class="star" type="radio" name="lighting-star" id="lighting-four-star" value=4>
+                <label class="star" for="lighting-four-star"></label>
+
+                <input class="star" type="radio" name="lighting-star" id="lighting-five-star" value=5>
+                <label class="star" for="lighting-five-star"></label>
+
+            </div>
+
+            <div class="cleanliness">
+                <h2>Cleanliness</h2>
+
+                <input class="star" type="radio" name="cleanliness-star" id="cleanliness-one-star" value=1>
+                <label class="star" for="cleanliness-one-star"></label>
+
+                <input class="star" type="radio" name="cleanliness-star" id="cleanliness-two-star" value=2>
+                <label class="star" for="cleanliness-two-star"></label>
+
+                <input class="star" type="radio" name="cleanliness-star" id="cleanliness-three-star" value=3>
+                <label class="star" for="cleanliness-three-star"></label>
+
+                <input class="star" type="radio" name="cleanliness-star" id="cleanliness-four-star" value=4>
+                <label class="star" for="cleanliness-four-star"></label>
+
+                <input class="star" type="radio" name="cleanliness-star" id="cleanliness-five-star" value=5>
+                <label class="star" for="cleanliness-five-star"></label>
+
+            </div>
+
+            <div class="security">
+                <h2>Security Presence</h2>
+
+                <input class="star" type="radio" name="security-star" id="security-one-star" value=1>
+                <label class="star" for="security-one-star"></label>
+
+                <input class="star" type="radio" name="security-star" id="security-two-star" value=2>
+                <label class="star" for="security-two-star"></label>
+
+                <input class="star" type="radio" name="security-star" id="security-three-star" value=3>
+                <label class="star" for="security-three-star"></label>
+
+                <input class="star" type="radio" name="security-star" id="security-four-star" value=4>
+                <label class="star" for="security-four-star"></label>
+
+                <input class="star" type="radio" name="security-star" id="security-five-star" value=5>
+                <label class="star" for="security-five-star"></label>
+
+            </div>
+           
+
+            <input class="submit" type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+
+</html>

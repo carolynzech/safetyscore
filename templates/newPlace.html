@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <meta charset="UTF-8"
+  <meta charset="UTF-8">
   <head>
       <title>
           Create a New Location!
@@ -12,6 +12,11 @@
       <h1>Enter the name of the location!</h1><br>
       <form action="/newPlaceName"  method="POST">
           <input class="name" type="text" name="placeName">
+          <select id="typeSelector" name = "dangerType">
+            <option value="pandemic">Pandemic Safety</option>
+            <option value="campus">Campus Safety</option>
+            <option value="other">Other Safety</option>
+          </select>
           <button class="submit" type="submit">Submit</button>
       </form>
 

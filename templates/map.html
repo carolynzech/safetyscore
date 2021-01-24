@@ -4,6 +4,8 @@
   <head>
 
     <title>Simple Map</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7C3g2GQBBC-xnlh4PKvqnr-Yd5RrF5Q&callback=initMap&libraries=&v=weekly"
@@ -45,12 +47,17 @@
             "<li>Outdoor Rating: {{ place["ratings"]["outdoorRating"] }}&#9733</li>"+
             "<li>Capacity Rating: {{ place["ratings"]["capacityRating"] }}&#9733</li>"+
             "<li>Contact Rating: {{ place["ratings"]["contactRating"] }}&#9733</li>"+
-        "<a href=\"/rate?name={{ place["placeName"] }}&lat={{ place["lat"] }}&lng={{ place["lng"] }}\">Rate this Place</a>";
+            "<li>Temperature Check Rating: {{ place["ratings"]["tempRating"] }}&#9733</li>"+
+        "<a href=\"/rate?name={{ place["placeName"] }}&lat={{ place["lat"] }}&lng={{ place["lng"] }}&dangerType={{ place["dangerType"] }}\">Rate this Place</a>";
+
+
+        
 
 
         var marker{{ loop.index }} = new google.maps.Marker({
             position: { lat: {{ place["lat"] }}, lng: {{ place["lng"] }} },
             map: map,
+            label: {% if place["dangerType"]=="pandemic" %}'P'{% elif place["dangerType"]=="campus" %}'C'{% elif place["dangerType"]=="transportation" %}'T'{% endif %}
           });
         var infowindow{{ loop.index }} = new google.maps.InfoWindow({
             content: contentString{{ loop.index }},
@@ -77,6 +84,49 @@
 
 
   <body>
+    <nav class="navbar navbar-dark fixed-top navbar-expand-lg" style="background-color: #00adb5;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../static/logo-slogan.png" alt="" width="30" height="24" class="d-inline-block align-top">
+          SafetyScore
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map">Main Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map?mapType=pandemic">Pandemic Safety Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map?mapType=campus">Campus Safety Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map?mapType=transportation">Transportation Safety Map</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav ms-auto">
+            <li>
+                <div class="btn-nav">
+                  <a class="btn btn-outline-light btn-small navbar-btn" href="/logout">Logout</a>
+                </div>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+
+
+    </nav>
     <div id="map"></div>
   </body>
 
