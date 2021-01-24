@@ -4,28 +4,39 @@
   box-sizing: border-box;
 }
 
-.star[type="radio"] {
-	display:none;
+.menu-container {
+  background-color: #09aeb5;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
-.star + label {
-	display: inline-block;
-	width: 100px;
-	height: 95px;
-	cursor: pointer;
-	background-image: url("star.png")
+.menu {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.star[type="radio"]:checked + label {
-	background-image: url("filled-in-star.png")
+body {
+  background: #EEEEEE;
 }
 
-.submit {
+img {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 800px;
+  border: 5px black;
+  margin: 0px auto;
+}
+
+.btn-signup, .btn-login {
   display: block;
   text-decoration: none;
+  font-size: 25px;
 
-  color: #FFF;
-  background-color: #5995DA;
+  color: #09aeb5;
+  background-color: #EEEEEE;
   font-weight: bold;
   padding: 20px;
   text-align: center;
@@ -36,80 +47,14 @@
   margin: 20px auto;
 }
 
-.main-text {
-position: absolute;
-width: 500px;
-height: 45px;
-left: 35%;
-top: 30%;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 80px;
-line-height: 70px;
-text-align: center;
-
-color: #00ADB5;
-
-
-}
-body {
-  background: #EEEEEE;
-}
-.slogan-text{
-  position: absolute;
-width: 350px;
-height: 26px;
-left: 39%;
-top: 42%;
-
-
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 28px;
-line-height: 21px;
-text-align: center;
-
-color: #00ADB5;
-
-
-}
-.btn-login {
-  position: absolute;
-width: 100px;
-height: 45px;
-left: 90%;
-top: 5%;
-font-family: Roboto;
-font-size: 25px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px;
-letter-spacing: 0em;
-text-align: center;
-background-color: white;
-border-radius: 10%;
-;
-
-
-
+.btn-signup:hover, .btn-login:hover,
+.btn-signup:visited:hover, .btn-login:visited:hover {
+  color: #FFF;
+  background-color: #76AEED;
 }
 
-.btn-signup {
-  width: 100px;
-height: 45px;
-margin-left:83%;
-margin-top: 2.5%;
-font-family: Roboto;
-font-size: 25px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px;
-letter-spacing: 0em;
-text-align: center;
-background-color: white;
-border-radius: 10%;
-
+.btn-signup:active, .btn-login:active,
+.btn-signup:visited:active, .btn-login:active {
+  color: #FFF;
+  background-color: #5995DA;
 }
