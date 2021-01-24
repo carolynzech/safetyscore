@@ -18,11 +18,12 @@
 	<!-- Form to input a rating -->
 	<div class="container">
 
+		<h1>How well does the location satisfy the following criteria?</h1>
+
 		<form action="/addPlaceForm" method="POST">
 
 			<div class="masks">
-
-				<h1>On a scale from one to five stars, how consistently do employees and patrons properly wear masks?</h1>
+				<h2>Mask Wearing</h2>
 				    <input class="star" type="radio" name="masks-star" id="masks-one-star" value=1>
             <label class="star" for="masks-one-star"></label>
 
@@ -41,8 +42,8 @@
           </div>
 
           <div class="distancing">
+						<h2>Social Distancing</h2>
 
-            <h1>On a scale of one to five stars, how consistently do employees and patrons maintain a distance of 6ft or greater from the next group?</h1>
             <input class="star" type="radio" name="distancing-star" id="distancing-one-star" value=1>
             <label class="star" for="distancing-one-star"></label>
 
@@ -61,9 +62,9 @@
           </div>
 
           <div class="outdoor">
+						<h2>Outdoor Service</h2>
 
-            <h1>On a scale of one to five stars, how much opportunity does this location provide for outdoor service?</h1>
-            <input class="star" type="radio" name="outdoor-star" id="outdoor-one-star" value=1>
+						 <input class="star" type="radio" name="outdoor-star" id="outdoor-one-star" value=1>
             <label class="star" for="outdoor-one-star"></label>
 
             <input class="star" type="radio" name="outdoor-star" id="outdoor-two-star" value=2>
@@ -81,9 +82,8 @@
           </div>
 
           <div class="contactless">
+						<h2>Contactless Service</h2>
 
-            <h1>On a scale of one to five stars, how much opportunity does this
-              location provide for contactless service (e.g. self-checkout)?</h1>
             <input class="star" type="radio" name="contactless-star" id="contactless-one-star" value=1>
             <label class="star" for="contactless-one-star"></label>
 
@@ -102,9 +102,8 @@
           </div>
 
           <div class="capacity">
+						<h2>Capacity Limits</h2>
 
-            <h1>On a scale of one to five stars, how much opportunity does this
-              location make an effort to make and enforce capacity limits?</h1>
             <input class="star" type="radio" name="capacity-star" id="capacity-one-star" value=1>
             <label class="star" for="capacity-one-star"></label>
 
@@ -123,8 +122,8 @@
           </div>
 
           <div class="temp">
+						<h2>Temperature Checks</h2>
 
-           <h1>On a scale of one to five stars, how consistently do employees perform temperature checks before admitting patrons?</h1>
             <input class="star" type="radio" name="temp-star" id="temp-one-star" value=1>
             <label class="star" for="temp-one-star"></label>
 

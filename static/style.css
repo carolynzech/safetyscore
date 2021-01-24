@@ -20,18 +20,50 @@
 	background-image: url("filled-in-star.png")
 }
 
-.submit {
-  display: block;
-  text-decoration: none;
+.masks,
+.distancing,
+.outdoor,
+.contactless,
+.capacity,
+.temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  color: #FFF;
-  background-color: #5995DA;
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  color: #09aeb5;
+}
+
+h2 {
+  display: inline-flex;
+  text-align: left;
+  justify-content: center;
+  color: #09aeb5;
+  width: 500px;
+}
+
+.submit {
+  display: flex;
+  text-decoration: none;
+  font-size: 50px;
+  border: none;
+
+  color: #00adb5;
+  background-color: #eeeeee;
   font-weight: bold;
   padding: 20px;
   text-align: center;
-  border: 2px solid #5D6063;
-  border-radius: 5px;
+  justify-content: center;
 
   width: 200px;
   margin: 20px auto;
+}
+
+.container {
+  width: 100vw;
+  background-color: #eeeeee;
 }
