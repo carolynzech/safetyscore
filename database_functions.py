@@ -20,6 +20,16 @@ def addEntity():
 
     print(f"Saved {entity.key.name}: {entity['key']}")
 
+
+def userExists(username):
+    datastore_client = datastore.Client()
+
+    query = datastore_client.query(kind="user")
+    query.add_filter("username", "=", username)
+    result = list(query.fetch(1))
+    return len(result) > 0
+
+
 def addUser(username, password):
     datastore_client = datastore.Client()
     kind = "user"
@@ -39,7 +49,7 @@ def checkUser(username, password):
     return (entity["username"]==username and entity["password"]==password)
 
 
-def addPlace(placeName, masksRating, distancingRating, outdoorRating, capacityRating, contactRating, lat, lng):
+def addPlace(placeName, masksRating, distancingRating, outdoorRating, capacityRating, contactRating, tempRating, lat, lng, dangerType):
     datastore_client = datastore.Client()
     kind = "place"
     name = placeName
@@ -52,11 +62,13 @@ def addPlace(placeName, masksRating, distancingRating, outdoorRating, capacityRa
         'distancingRating': distancingRating, 
         'outdoorRating': outdoorRating,
         'capacityRating': capacityRating,
-        'contactRating': contactRating
+        'contactRating': contactRating,
+        'tempRating': tempRating
     }
     entity["numRatings"] = 1
     entity['lat'] = lat
     entity['lng'] = lng
+    entity["dangerType"] = dangerType
     datastore_client.put(entity)
     print(f"Saved {entity.key.name}: {entity['ratings']}")
 
@@ -68,27 +80,29 @@ def getPlace(placeName):
     result = list(query.fetch(1))
     if len(result) > 0:
         result = result[0]
-        print(result.key.name)
-        print(result["ratings"]["masksRating"])
+        # print(result.key.name)
+        # print(result["ratings"]["masksRating"])
         return result
     else:
         return None
 
-def updatePlace(placeName, masksRating, distancingRating, outdoorRating, capacityRating, contactRating, lat, lng):
+def updatePlace(placeName, masksRating, distancingRating, outdoorRating, capacityRating, contactRating, tempRating, lat, lng, dangerType):
     result = getPlace(placeName)
     currMasks = result["ratings"]["masksRating"]
     currDistancing = result["ratings"]["distancingRating"]
     currOutdoor = result["ratings"]["outdoorRating"]
     currCapacity = result["ratings"]["capacityRating"]
     currContact = result["ratings"]["contactRating"]
+    currTemp = result["ratings"]["tempRating"]
     currRatings = result["numRatings"]
 
     newRatings = currRatings + 1
-    newMasks = (currMasks + masksRating)/newRatings
-    newDistancing = (currDistancing + distancingRating)/newRatings
-    newOutdoor = (currOutdoor + outdoorRating)/newRatings
-    newCapacity = (currCapacity + capacityRating)/newRatings
-    newContact = (currContact + contactRating)/newRatings
+    newMasks = round((currMasks + masksRating)/newRatings, 2)
+    newDistancing = round((currDistancing + distancingRating)/newRatings, 2)
+    newOutdoor = round((currOutdoor + outdoorRating)/newRatings, 2)
+    newCapacity = round((currCapacity + capacityRating)/newRatings, 2)
+    newContact = round((currContact + contactRating)/newRatings, 2)
+    newTemp = round((currTemp + tempRating)/newRatings, 2)
 
 
     datastore_client = datastore.Client()
@@ -102,11 +116,13 @@ def updatePlace(placeName, masksRating, distancingRating, outdoorRating, capacit
         'distancingRating': newDistancing, 
         'outdoorRating': newOutdoor,
         'capacityRating': newCapacity,
-        'contactRating': newContact
+        'contactRating': newContact,
+        'tempRating': newTemp
     }
     entity["numRatings"] = newRatings
     entity['lat'] = lat
     entity['lng'] = lng
+    entity["dangerType"] = dangerType
 
     datastore_client.put(entity)
     print(f"Updated {entity.key.name}: {entity['ratings']}")
@@ -115,6 +131,16 @@ def updatePlace(placeName, masksRating, distancingRating, outdoorRating, capacit
 def getAllPlaces():
     datastore_client = datastore.Client()
     query = datastore_client.query(kind="place")
+    results = list(query.fetch())
+    print(results)
+    return results
+
+def getType(type):
+    datastore_client = datastore.Client()
+    query = datastore_client.query(kind="place")
+    if type != '':
+        query.add_filter("dangerType", "=", type)
+
     results = list(query.fetch())
     print(results)
     return results
