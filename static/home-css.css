@@ -30,7 +30,7 @@ img {
   margin: 0px auto;
 }
 
-.button {
+.btn-signup, .btn-login {
   display: block;
   text-decoration: none;
   font-size: 25px;
@@ -47,14 +47,14 @@ img {
   margin: 20px auto;
 }
 
-.button:hover,
-.button:visited:hover {
+.btn-signup:hover, .btn-login:hover,
+.btn-signup:visited:hover, .btn-login:visited:hover {
   color: #FFF;
   background-color: #76AEED;
 }
 
-.button:active,
-.button:visited:active {
+.btn-signup:active, .btn-login:active,
+.btn-signup:visited:active, .btn-login:active {
   color: #FFF;
   background-color: #5995DA;
 }
