@@ -33,11 +33,11 @@
 
         map = new google.maps.Map(document.getElementById("map"), {
           center: { lat: {{ lat }}, lng: {{ lng }} },
-          zoom: 8,
+          zoom: 15,
         });
 
         {% for place in data %}
-        var contentString{{ place["placeName"] }} = 
+        var contentString{{ loop.index }} = 
         "<h3>{{ place["placeName"] }}</h3>" + 
         "<ul>"+
             "<li>Masks Rating: {{ place["ratings"]["masksRating"] }}&#9733</li>"+
@@ -48,15 +48,16 @@
         "<a href=\"/rate?name={{ place["placeName"] }}&lat={{ place["lat"] }}&lng={{ place["lng"] }}\">Rate this Place</a>";
 
 
-        var marker{{ place["placeName"] }} = new google.maps.Marker({
+        var marker{{ loop.index }} = new google.maps.Marker({
             position: { lat: {{ place["lat"] }}, lng: {{ place["lng"] }} },
             map: map,
           });
-        var infowindow{{ place["placeName"] }} = new google.maps.InfoWindow({
-            content: contentString{{ place["placeName"] }},
+        var infowindow{{ loop.index }} = new google.maps.InfoWindow({
+            content: contentString{{ loop.index }},
+            maxWidth: 300,
         });
-        marker{{ place["placeName"] }}.addListener("dblclick", () => {
-            infowindow{{ place["placeName"] }}.open(map, marker{{ place["placeName"] }});
+        marker{{ loop.index }}.addListener("dblclick", () => {
+            infowindow{{ loop.index }}.open(map, marker{{ loop.index }});
         });
         {% endfor %}
 
