@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.star[type="radio"] {
+	display:none;
+}
+
+.star + label {
+	display: inline-block;
+	width: 100px;
+	height: 95px;
+	cursor: pointer;
+	background-image: url("star.png")
+}
+
+.star[type="radio"]:checked + label {
+	background-image: url("filled-in-star.png")
+}
+
+.container {
+  width: 100vw;
+  background-color: #eeeeee;
+}
+
+.masks,
+.distancing,
+.outdoor,
+.contactless,
+.capacity,
+.temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  color: #09aeb5;
+}
+
+h2 {
+  display: inline-flex;
+  text-align: left;
+  justify-content: center;
+  color: #09aeb5;
+  width: 500px;
+}
+
+.submit {
+  display: flex;
+  text-decoration: none;
+  font-size: 50px;
+  border: none;
+
+  color: #00adb5;
+  background-color: #eeeeee;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+
+  width: 200px;
+  margin: 20px auto;
+}
+
+img {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 500px;
+  margin: 0px auto;
+}
