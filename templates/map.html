@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7C3g2GQBBC-xnlh4PKvqnr-Yd5RrF5Q&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <script>
+      let map;
+
+      function initMap() {
+
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: {{ lat }}, lng: {{ lng }} },
+          zoom: 8,
+        });
+
+        {% for place in data %}
+        var contentString{{ place["placeName"] }} = 
+        "<h3>{{ place["placeName"] }}</h3>" + 
+        "<ul>"+
+            "<li>Masks Rating: {{ place["ratings"]["masksRating"] }}&#9733</li>"+
+            "<li>Distancing Rating: {{ place["ratings"]["distancingRating"] }}&#9733</li>"+
+            "<li>Outdoor Rating: {{ place["ratings"]["outdoorRating"] }}&#9733</li>"+
+            "<li>Capacity Rating: {{ place["ratings"]["capacityRating"] }}&#9733</li>"+
+            "<li>Contact Rating: {{ place["ratings"]["contactRating"] }}&#9733</li>"+
+        "<a href=\"/rate?name={{ place["placeName"] }}&lat={{ place["lat"] }}&lng={{ place["lng"] }}\">Rate this Place</a>";
+
+
+        var marker{{ place["placeName"] }} = new google.maps.Marker({
+            position: { lat: {{ place["lat"] }}, lng: {{ place["lng"] }} },
+            map: map,
+          });
+        var infowindow{{ place["placeName"] }} = new google.maps.InfoWindow({
+            content: contentString{{ place["placeName"] }},
+        });
+        marker{{ place["placeName"] }}.addListener("dblclick", () => {
+            infowindow{{ place["placeName"] }}.open(map, marker{{ place["placeName"] }});
+        });
+        {% endfor %}
+
+        map.addListener("click", (e) => {
+          var lat = e.latLng.lat()
+          var lng = e.latLng.lng()
+          if (window.confirm("Do you want to add this place to the map?")){
+            window.location.href="/newPlace?lat="+lat+"&lng="+lng;
+          }
+        });
+        
+
+      }
+    </script>
+
+  </head>
+
+
+  <body>
+    <div id="map"></div>
+  </body>
+
+
+</html>
