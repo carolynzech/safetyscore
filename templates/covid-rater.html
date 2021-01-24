@@ -3,16 +3,19 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content=" valueth=device- valueth">
 	<title>SafetyMeter</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
 	 crossorigin="anonymous" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body>
-	<script src="script.js">
-	</script>
+
+  <script src="script.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 	<!-- Form to input a rating -->
 	<div class "container">
 
@@ -21,39 +24,39 @@
 			<div class="masks">
 
 				<h1>On a scale from one to five stars, how consistently do employees and patrons properly wear masks?</h1>
-				<input class="star one-star" id="masks-one-star" type="radio" name="masks-one-star"/>
-            <label class="star one-star" for="masks-one-star"></label>
+				    <input class="star" type="radio" name="masks-star" id="masks-one-star" value=1/>
+            <label class="star" for="masks-one-star"></label>
 
-            <input class="star two-star" id="masks-two-star" type="radio" ="masks-two-star"/>
-            <label class="star two-star" for="masks-two-star"></label>
+            <input class="star" type="radio" name="masks-star" id="masks-two-star" value=2/>
+            <label class="star" for="masks-two-star"></label>
 
-            <input class="star three-star" id="masks-three-star" type="radio" name=="masks-three-star"/>
-            <label class="star three-star" for="masks-three-star"></label>
+            <input class="star" type="radio" name="masks-star" id="masks-three-star" value=3/>
+            <label class="star" for="masks-three-star"></label>
 
-            <input class="star four-star" id="masks-four-star" type="radio" name=="masks-four-star"/>
-            <label class="star four-star" for="masks-four-star"></label>
+            <input class="star" type="radio" name="masks-star" id="masks-four-star" value=4/>
+            <label class="star" for="masks-four-star"></label>
 
-            <input class="star five-star" id="masks-five-star" type="radio" name=="masks-five-star"/>
-            <label class="star five-star" for="masks-five-star"></label>
+            <input class="star" type="radio" name="masks-star" id="masks-five-star" value=5/>
+            <label class="star" for="masks-five-star"></label>
 
           </div>
 
           <div class="distancing">
 
             <h1>On a scale of one to five stars, how consistently do employees and patrons maintain a distance of 6ft or greater from the next group?</h1>
-            <input class="star one-star" id="distancing-one-star" type="radio" name="distancing-one-star"/>
+            <input class="star one-star" name="masks-star" id="distancing-one-star" type="radio" name="distancing-one-star" value=1/>
             <label class="star one-star" for="distancing-one-star"></label>
 
-            <input class="star two-star" id="distancing-two-star" type="radio" name="distancing-two-star"/>
+            <input class="star two-star" name="masks-star" id="distancing-two-star" type="radio" name="distancing-two-star" value=2/>
             <label class="star two-star" for="distancing-two-star"></label>
 
-            <input class="star three-star" id="distancing-three-star" type="radio" name="distancing-three-star"/>
+            <input class="star three-star" name="masks-star" id="distancing-three-star" type="radio" name="distancing-three-star" value=3/>
             <label class="star three-star" for="distancing-three-star"></label>
 
-            <input class="star four-star" id="distancing-four-star" type="radio" name="distancing-four-star"/>
+            <input class="star four-star" name="masks-star" id="distancing-four-star" type="radio" name="distancing-four-star" value=4/>
             <label class="star four-star" for="distancing-four-star"></label>
 
-            <input class="star five-star" id="distancing-five-star" type="radio" name="distancing-five-star"/>
+            <input class="star five-star" name="masks-star" id="distancing-five-star" type="radio" name="distancing-five-star" value=5/>
             <label class="star five-star" for="distancing-five-star"></label>
 
           </div>
@@ -61,19 +64,19 @@
           <div class="outdoor">
 
             <h1>On a scale of one to five stars, how much opportunity does this location provide for outdoor service?</h1>
-            <input class="star one-star" id="outdoor-one-star" type="radio" name="outdoor-one-star"/>
+            <input class="star one-star" name="masks-star" id="outdoor-one-star" type="radio" name="outdoor-one-star" value=1/>
             <label class="star one-star" for="outdoor-one-star"></label>
 
-            <input class="star two-star" id="outdoor-two-star" type="radio" name="outdoor-two-star"/>
+            <input class="star two-star" name="masks-star" id="outdoor-two-star" type="radio" name="outdoor-two-star" value=2/>
             <label class="star two-star" for="outdoor-two-star"></label>
 
-            <input class="star three-star" id="outdoor-three-star" type="radio" name="outdoor-three-star"/>
+            <input class="star three-star" name="masks-star" id="outdoor-three-star" type="radio" name="outdoor-three-star" value=3/>
             <label class="star three-star" for="outdoor-three-star"></label>
 
-            <input class="star four-star" id="outdoor-four-star" type="radio" name="outdoor-four-star"/>
+            <input class="star four-star" name="masks-star" id="outdoor-four-star" type="radio" name="outdoor-four-star" value=4/>
             <label class="star four-star" for="outdoor-four-star"></label>
 
-            <input class="star five-star" id="outdoor-five-star" type="radio" name="outdoor-five-star"/>
+            <input class="star five-star" name="masks-star" id="outdoor-five-star" type="radio" name="outdoor-five-star" value=5/>
             <label class="star five-star" for="outdoor-five-star"></label>
 
           </div>
@@ -82,19 +85,19 @@
 
             <h1>On a scale of one to five stars, how much opportunity does this
               location provide for contactless service (e.g. self-checkout)?</h1>
-            <input class="star one-star" id="contactless-one-star" type="radio" name="contactless-one-star"/>
+            <input class="star one-star" name="masks-star" id="contactless-one-star" type="radio" name="contactless-one-star" value=1/>
             <label class="star one-star" for="contactless-one-star"></label>
 
-            <input class="star two-star" id="contactless-two-star" type="radio" name="contactless-two-star"/>
+            <input class="star two-star" name="masks-star" id="contactless-two-star" type="radio" name="contactless-two-star" value=2/>
             <label class="star two-star" for="contactless-two-star"></label>
 
-            <input class="star three-star" id="contactless-three-star" type="radio" name="contactless-three-star"/>
+            <input class="star three-star" name="masks-star" id="contactless-three-star" type="radio" name="contactless-three-star" value=3/>
             <label class="star three-star" for="contactless-three-star"></label>
 
-            <input class="star four-star" id="contactless-four-star" type="radio" name="contactless-four-star"/>
+            <input class="star four-star" name="masks-star" id="contactless-four-star" type="radio" name="contactless-four-star" value=4/>
             <label class="star four-star" for="contactless-four-star"></label>
 
-            <input class="star five-star" id="contactless-five-star" type="radio" name="contactless-five-star"/>
+            <input class="star five-star" name="masks-star" id="contactless-five-star" type="radio" name="contactless-five-star" value=5/>
             <label class="star five-star" for="contactless-five-star"></label>
 
           </div>
@@ -103,19 +106,19 @@
 
             <h1>On a scale of one to five stars, how much opportunity does this
               location make an effort to make and enforce capacity limits?</h1>
-            <input class="star one-star" id="capacity-one-star" type="radio" name="capacity-one-star"/>
+            <input class="star one-star" name="masks-star" id="capacity-one-star" type="radio" name="capacity-one-star" value=1/>
             <label class="star one-star" for="capacity-one-star"></label>
 
-            <input class="star two-star" id="capacity-two-star" type="radio" name="capacity-two-star"/>
+            <input class="star two-star" name="masks-star" id="capacity-two-star" type="radio" name="capacity-two-star" value=2/>
             <label class="star two-star" for="capacity-two-star"></label>
 
-            <input class="star three-star" id="capacity-three-star" type="radio" name="capacity-three-star"/>
+            <input class="star three-star" name="masks-star" id="capacity-three-star" type="radio" name="capacity-three-star" value=3/>
             <label class="star three-star" for="capacity-three-star"></label>
 
-            <input class="star four-star" id="capacity-four-star" type="radio" name="capacity-four-star"/>
+            <input class="star four-star" name="masks-star" id="capacity-four-star" type="radio" name="capacity-four-star" value=4/>
             <label class="star four-star" for="capacity-four-star"></label>
 
-            <input class="star five-star" id="capacity-five-star" type="radio" name="capacity-five-star"/>
+            <input class="star five-star" name="masks-star" id="capacity-five-star" type="radio" name="capacity-five-star" value=5/>
             <label class="star five-star" for="capacity-five-star"></label>
 
           </div>
@@ -123,26 +126,24 @@
           <div class="temp">
 
            <h1>On a scale of one to five stars, how consistently do employees perform temperature checks before admitting patrons?</h1>
-            <input class="star one-star" id="temp-one-star" type="radio" name="temp-one-star"/>
+            <input class="star one-star" name="masks-star" id="temp-one-star" type="radio" name="temp-one-star" value=1/>
             <label class="star one-star" for="temp-one-star"></label>
 
-            <input class="star two-star" id="temp-two-star" type="radio" name="temp-two-star"/>
+            <input class="star two-star" name="masks-star" id="temp-two-star" type="radio" name="temp-two-star" value=2/>
             <label class="star two-star" for="temp-two-star"></label>
 
-            <input class="star three-star" id="temp-three-star" type="radio" name="temp-three-star"/>
+            <input class="star three-star" name="masks-star" id="temp-three-star" type="radio" name="temp-three-star" value=3/>
             <label class="star three-star" for="temp-three-star"></label>
 
-            <input class="star four-star" id="temp-four-star" type="radio" name="temp-four-star"/>
+            <input class="star four-star" name="masks-star" id="temp-four-star" type="radio" name="temp-four-star" value=4/>
             <label class="star four-star" for="temp-four-star"></label>
 
-            <input class="star five-star" id="temp-five-star" type="radio" name="temp-five-star"/>
+            <input class="star five-star" name="masks-star" id="temp-five-star" type="radio" name="temp-five-star" value=5/>
             <label class="star five-star" for="temp-five-star"></label>
 
           </div>
 
-
-          <input type="submit" value="Submit">
-
+          <input class="submit" type="submit" value="Submit">
 
       </form>
     </div>
