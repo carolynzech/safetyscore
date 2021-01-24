@@ -12,11 +12,13 @@
       <h1>Enter the name of the location!</h1><br>
       <form action="/newPlaceName"  method="POST">
           <input class="name" type="text" name="placeName">
+          <div class="container">
           <select id="typeSelector" name = "dangerType">
             <option value="pandemic">Pandemic Safety</option>
             <option value="campus">Campus Safety</option>
             <option value="other">Other Safety</option>
           </select>
+        </div>
           <button class="submit" type="submit">Submit</button>
       </form>
 

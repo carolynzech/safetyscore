@@ -40,6 +40,13 @@ h1 {
   margin: 20px auto;
 }
 
+.container {
+  display: flex;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
 a {
   text-decoration: none;
 }
