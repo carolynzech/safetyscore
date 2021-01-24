@@ -9,8 +9,12 @@ app.secret_key = b'\xfe\x14\x07-#\x1a\x7f\xbe#PG\xd0\x8eo\x1ea'
 
 #default page
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+def index():
+    return render_template('home.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 @app.route('/map')
 def map():
@@ -22,6 +26,24 @@ def map():
         lng = -71.4025
     return render_template('map.html', data=getAllPlaces(), lat=lat, lng=lng)
 
+#signup page
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method=='POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        addUser(username, password)
+        session['username'] = username
+        return redirect(url_for('map'))
+        # else:
+        #    return render_template('signup.html') 
+    elif request.method=='GET':
+        return redirect(url_for('signup'))
+
+
+    elif request.method=='GET':
+        return render_template('login.html')
 #login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -31,9 +53,9 @@ def login():
         
         if checkUser(username, password):
             session['username'] = username
-            return render_template('map.html')
+            return redirect(url_for('map'))
         else:
-           return render_template('login.html') 
+           return redirect(url_for('login'))
 
 
     elif request.method=='GET':
@@ -74,7 +96,6 @@ def addPlaceForm():
     else:
         updatePlace(name, masksRating, distancingRating, outdoorRating, capacityRating, contactRating, lat, lng)
     return redirect('map')
-
     
 @app.route('/newPlace')
 def newPlace():
