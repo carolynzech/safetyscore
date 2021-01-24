@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu-container {
+  background-color: #09aeb5;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  background: #EEEEEE;
+}
+
+img {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 800px;
+  border: 5px black;
+  margin: 0px auto;
+}
+
+.btn-signup, .btn-login {
+  display: block;
+  text-decoration: none;
+  font-size: 25px;
+
+  color: #09aeb5;
+  background-color: #EEEEEE;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #5D6063;
+  border-radius: 5px;
+
+  width: 200px;
+  margin: 20px auto;
+}
+
+.btn-signup:hover, .btn-login:hover,
+.btn-signup:visited:hover, .btn-login:visited:hover {
+  color: #FFF;
+  background-color: #76AEED;
+}
+
+.btn-signup:active, .btn-login:active,
+.btn-signup:visited:active, .btn-login:active {
+  color: #FFF;
+  background-color: #5995DA;
+}
