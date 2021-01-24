@@ -40,6 +40,10 @@ h1 {
   margin: 20px auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 img {
   display: flex;
   text-align: center;
