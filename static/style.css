@@ -13,11 +13,11 @@
 	width: 100px;
 	height: 95px;
 	cursor: pointer;
-	background-image: url("safetymeter/static/star.png")
+	background-image: url("star.png")
 }
 
 .star[type="radio"]:checked + label {
-	background-image: url("safetymeter/static/filled-in-star.png")
+	background-image: url("filled-in-star.png")
 }
 
 .submit {
