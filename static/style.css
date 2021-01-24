@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .star[type="radio"] {
 	display:none;
 }
@@ -12,4 +18,20 @@
 
 .star[type="radio"]:checked + label {
 	background-image: url("filled-in-star.png")
+}
+
+.submit {
+  display: block;
+  text-decoration: none;
+
+  color: #FFF;
+  background-color: #5995DA;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #5D6063;
+  border-radius: 5px;
+
+  width: 200px;
+  margin: 20px auto;
 }
