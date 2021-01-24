@@ -20,6 +20,11 @@
 	background-image: url("filled-in-star.png")
 }
 
+.container {
+  width: 100vw;
+  background-color: #eeeeee;
+}
+
 .masks,
 .distancing,
 .outdoor,
@@ -63,7 +68,10 @@ h2 {
   margin: 20px auto;
 }
 
-.container {
-  width: 100vw;
-  background-color: #eeeeee;
+img {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 500px;
+  margin: 0px auto;
 }
